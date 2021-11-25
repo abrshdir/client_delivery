@@ -58,7 +58,7 @@ class FoodDetail extends StatelessWidget {
                       ),
                     ),
                     Icon(
-                      Icons.list,
+                      Icons.shopping_cart,
                       color: Colors.black87,
                     )
                   ],

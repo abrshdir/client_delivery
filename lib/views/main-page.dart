@@ -1,8 +1,10 @@
 import 'package:ff_navigation_bar/ff_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:new_client_delivery/custom_widgets/texts/CTect16.dart';
-import 'package:new_client_delivery/profile/profile.dart';
+import 'package:new_client_delivery/views/profile/profile.dart';
+import 'package:new_client_delivery/views/cart/cart.dart';
 import 'package:new_client_delivery/views/foodDetails/detail.dart';
+import 'package:new_client_delivery/views/restaurants/favorite.dart';
 import 'package:new_client_delivery/views/restaurants/restaurants.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,12 +16,8 @@ class _HomePageState extends State<HomePage> {
   int selectedIndex = 0;
   List<Widget> _widgetOptions = <Widget>[
     Restaurants(),
-    Text(
-      'Index 1: Business',
-      ),
-    Text(
-      'Index 2: School',
-      ),
+    Favorite(),
+    Cart(),
     Account()
   ];
 

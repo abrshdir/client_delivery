@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:new_client_delivery/custom_widgets/texts/CTect14.dart';
 import 'package:new_client_delivery/custom_widgets/texts/CTect16.dart';
 import 'package:new_client_delivery/views/foodDetails/detail.dart';
-import 'package:new_client_delivery/views/restaurants/restaurant-detail.dart';
 
-class Restaurants extends StatefulWidget {
+class Favorite extends StatefulWidget {
   @override
-  _RestaurantsState createState() => _RestaurantsState();
+  _FavoriteState createState() => _FavoriteState();
 }
 
-class _RestaurantsState extends State<Restaurants> {
+class _FavoriteState extends State<Favorite> {
   @override
   Widget build(BuildContext context) {
+
     final deviceHeight = MediaQuery.of(context).size.height;
     final deviceWidth = MediaQuery.of(context).size.width;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -35,7 +38,6 @@ class _RestaurantsState extends State<Restaurants> {
                     color: Colors.white38,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                     child: SingleChildScrollView(
-                      physics: BouncingScrollPhysics(),
                       scrollDirection: Axis.horizontal, //.horizontal
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -62,185 +64,51 @@ class _RestaurantsState extends State<Restaurants> {
             bottom: 8,
           ),
           child: Text(
-            'Main Categories',
+            'Favorite Restaurants',
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
         ),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              Card(
-                color: Color(0xfffFB6E3B),
+        Center(
+          child: FittedBox(
+            fit: BoxFit.cover,
+            alignment: Alignment.center,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                elevation: 0,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
+                  borderRadius: BorderRadius.circular(22),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 25,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            'asset/burger.png',
-                            height: 20,
-                          ),
-                        ),
+                color: Color(0xfff2f2f4),
+                // color: Colors.red,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(22),
                       ),
-                      SizedBox(
-                        height: 10,
+                      color: Colors.white,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 38.0, vertical: 8),
+                        child: Text('Restaurant', style: TextStyle(fontWeight: FontWeight.bold),),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 8.0),
-                        child: Text(
-                          'Burgers',
-                          style: TextStyle(fontSize: 12, color: Colors.white),
-                        ),
-                      )
-                    ],
-                  ),
+                    ),
+                    Card(
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(22),
+                      ),
+                      color: Colors.transparent,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 38.0, vertical: 8),
+                        child: Text('Food', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey),),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              Card(
-                color: Color(0xfffFB6E3B),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 25,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            'asset/burger.png',
-                            height: 20,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 8.0),
-                        child: Text(
-                          'Burgers',
-                          style: TextStyle(fontSize: 12, color: Colors.white),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              Card(
-                color: Color(0xfffFB6E3B),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 25,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            'asset/burger.png',
-                            height: 20,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 8.0),
-                        child: Text(
-                          'Burgers',
-                          style: TextStyle(fontSize: 12, color: Colors.white),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              Card(
-                color: Color(0xfffFB6E3B),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 25,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            'asset/burger.png',
-                            height: 20,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 8.0),
-                        child: Text(
-                          'Burgers',
-                          style: TextStyle(fontSize: 12, color: Colors.white),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              Card(
-                color: Color(0xfffFB6E3B),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 25,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            'asset/burger.png',
-                            height: 20,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 8.0),
-                        child: Text(
-                          'Burgers',
-                          style: TextStyle(fontSize: 12, color: Colors.white),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ].map((e) => Padding(padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10), child: e)).toList(),
+            ),
           ),
         ),
         Expanded(
@@ -254,7 +122,7 @@ class _RestaurantsState extends State<Restaurants> {
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
-                          MaterialPageRoute(builder: (BuildContext context) => RestaurantDetail()),
+                          MaterialPageRoute(builder: (BuildContext context) => FoodDetail()),
                         );
                       },
                       child: Column(

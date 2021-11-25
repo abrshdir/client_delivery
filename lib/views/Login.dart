@@ -14,7 +14,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  VideoPlayerController _controller;
+ VideoPlayerController _controller;
 
   get disposing {
     return dispose();

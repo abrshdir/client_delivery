@@ -60,41 +60,21 @@ class _CartState extends State<Cart> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Card(
-                      elevation: 4,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18.0),
-                      ),
-                      child: CircleAvatar(
-                          backgroundColor: Colors.white10,
-                          radius: 14,
-                          child: CircleAvatar(
-                              radius: 12,
-                              backgroundColor: Colors.white,
-                              child: Icon(
-                                Icons.arrow_back_ios_rounded,
-                                color: Colors.black87,
-                                size: 15,
-                              ))),
-                    ),
-                  ),
-                  GestureDetector(
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal:8.0, vertical: 4),
+                child: Align(
+                  alignment: Alignment.topRight,
+                  child: GestureDetector(
                     child: Text(
                       'Clear',
                       style: TextStyle(
                         fontSize: 12,
                         color: Color(0xfffFB6E3B),
+                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
-                ],
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 22.0),

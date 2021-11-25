@@ -39,11 +39,15 @@ class _DeliveryStatusState extends State<DeliveryStatus> {
                     child: Container(
                         height: deviceHeight / 1.35,
                         decoration: new BoxDecoration(
-                            color: Colors.white, borderRadius: new BorderRadius.only(topLeft: const Radius.circular(15.0), topRight: const Radius.circular(15.0))),
+                          color: Colors.white,
+                          borderRadius: new BorderRadius.only(
+                            topLeft: const Radius.circular(15.0),
+                            topRight: const Radius.circular(15.0),
+                          ),
+                        ),
                         child: incomingData(deviceHeight, deviceWidth)),
                   ),
                   Positioned(
-                    top: 0,
                     left: (deviceWidth / 2) - 30,
                     child: Card(
                       color: Colors.white,
@@ -72,8 +76,8 @@ class _DeliveryStatusState extends State<DeliveryStatus> {
 
   @override
   Widget build(BuildContext context) {
-    final deviceWidth = MediaQuery.of(context).size.width;
-    final deviceHeight = MediaQuery.of(context).size.height;
+    // final deviceWidth = MediaQuery.of(context).size.width;
+    // final deviceHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
       floatingActionButton: FloatingActionButton(
@@ -194,15 +198,15 @@ class _DeliveryStatusState extends State<DeliveryStatus> {
                         )),
                     Expanded(
                         child: Divider(
-                          thickness: 2.5,
-                          color: Color(0xfffFB6E3B),
-                        )),
+                      thickness: 2.5,
+                      color: Color(0xfffFB6E3B),
+                    )),
                     CircleAvatar(radius: 20, backgroundColor: Color(0xfffFB6E3B), child: CircularProgressIndicator(backgroundColor: Colors.transparent, strokeWidth: 2)),
                     Expanded(
                         child: Divider(
-                          thickness: 2.5,
-                          color: Colors.grey,
-                        )),
+                      thickness: 2.5,
+                      color: Colors.grey,
+                    )),
                     CircleAvatar(
                         radius: 10,
                         backgroundColor: Colors.grey,
@@ -213,9 +217,9 @@ class _DeliveryStatusState extends State<DeliveryStatus> {
                         )),
                     Expanded(
                         child: Divider(
-                          thickness: 2.5,
-                          color: Colors.grey,
-                        )),
+                      thickness: 2.5,
+                      color: Colors.grey,
+                    )),
                     CircleAvatar(
                         radius: 10,
                         backgroundColor: Colors.grey,
@@ -299,7 +303,7 @@ class _DeliveryStatusState extends State<DeliveryStatus> {
                                   child: ElevatedButton(
                                       style: ButtonStyle(
                                         backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                                              (Set<MaterialState> states) {
+                                          (Set<MaterialState> states) {
                                             if (states.contains(MaterialState.pressed)) return Colors.green;
                                             return Colors.white38; // Use the component's default.
                                           },
@@ -315,10 +319,17 @@ class _DeliveryStatusState extends State<DeliveryStatus> {
                                         child: Row(
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
-                                            Icon(Icons.support_agent, color: Colors.black38, size: 20,),
+                                            Icon(
+                                              Icons.support_agent,
+                                              color: Colors.black38,
+                                              size: 20,
+                                            ),
                                             Padding(
                                               padding: const EdgeInsets.only(left: 5.0),
-                                              child: Text('Support', style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),),
+                                              child: Text(
+                                                'Support',
+                                                style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
+                                              ),
                                             ),
                                           ],
                                         ),
@@ -333,75 +344,48 @@ class _DeliveryStatusState extends State<DeliveryStatus> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10.0),
-                child: Container(
-                  width: deviceWidth - 32,
-                  height: (deviceHeight / 4) - 30,
-                  child: Card(
-                    elevation: 6,
-                    shadowColor: Color(0xff03041d),
-                    color: Colors.white,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-                    child: Column(
-                      children: [
-                        ListTile(
-                          leading: Card(
-                              color: Color(0xffDBDBDC),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(16),
-                                child: Image.asset(
-                                  'asset/guy.jpg',
-                                  width: 40,
-                                  height: 40,
-                                  fit: BoxFit.cover,
+              AspectRatio(
+                aspectRatio: 3 / 1.3,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: deviceWidth - 32,
+                    height: (deviceHeight / 4) - 30,
+                    child: Card(
+                      elevation: 6,
+                      shadowColor: Color(0xff03041d),
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                      child: Column(
+                        children: [
+                          ListTile(
+                            leading: Card(
+                                color: Color(0xffDBDBDC),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16),
                                 ),
-                              )),
-                          title: CText14('Burgers Delicious'),
-                          subtitle: Text(
-                            '01 september, 12:30 PM',
-                            style: TextStyle(color: Colors.black38),
-                          ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            ElevatedButton(
-                                style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                                        (Set<MaterialState> states) {
-                                      if (states.contains(MaterialState.pressed)) return Colors.green;
-                                      return Colors.white38; // Use the component's default.
-                                    },
-                                  ),
-                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  )),
-                                ),
-                                clipBehavior: Clip.antiAlias,
-                                onPressed: () {},
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(Icons.call, color: Colors.black38, size: 20,),
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 5.0),
-                                        child: Text('Call', style: TextStyle(color: Color(0xff03041d), fontWeight: FontWeight.bold),),
-                                      ),
-                                    ],
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(16),
+                                  child: Image.asset(
+                                    'asset/guy.jpg',
+                                    width: 40,
+                                    height: 40,
+                                    fit: BoxFit.cover,
                                   ),
                                 )),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 8.0),
-                              child: ElevatedButton(
+                            title: CText14('Bruce Evans'),
+                            subtitle: Text(
+                              '01 september, 12:30 PM',
+                              style: TextStyle(color: Colors.black38),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              ElevatedButton(
                                   style: ButtonStyle(
                                     backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                                          (Set<MaterialState> states) {
+                                      (Set<MaterialState> states) {
                                         if (states.contains(MaterialState.pressed)) return Colors.green;
                                         return Colors.white38; // Use the component's default.
                                       },
@@ -417,18 +401,62 @@ class _DeliveryStatusState extends State<DeliveryStatus> {
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
-                                        Icon(Icons.location_on_sharp, color: Colors.black38, size: 20,),
+                                        Icon(
+                                          Icons.call,
+                                          color: Colors.black38,
+                                          size: 20,
+                                        ),
                                         Padding(
                                           padding: const EdgeInsets.only(left: 5.0),
-                                          child: Text('Location', style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),),
+                                          child: Text(
+                                            'Call',
+                                            style: TextStyle(color: Color(0xff03041d), fontWeight: FontWeight.bold),
+                                          ),
                                         ),
                                       ],
                                     ),
                                   )),
-                            ),
-                          ],
-                        )
-                      ],
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: ElevatedButton(
+                                    style: ButtonStyle(
+                                      backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                                        (Set<MaterialState> states) {
+                                          if (states.contains(MaterialState.pressed)) return Colors.green;
+                                          return Colors.white38; // Use the component's default.
+                                        },
+                                      ),
+                                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      )),
+                                    ),
+                                    clipBehavior: Clip.antiAlias,
+                                    onPressed: () {},
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Icon(
+                                            Icons.location_on_sharp,
+                                            color: Colors.black38,
+                                            size: 20,
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.only(left: 5.0),
+                                            child: Text(
+                                              'Location',
+                                              style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    )),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),

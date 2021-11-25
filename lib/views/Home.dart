@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:new_client_delivery/views/Login.dart';
+import 'package:new_client_delivery/views/help/help.dart';
+import 'package:new_client_delivery/views/main-page.dart';
 
 class Home extends StatefulWidget {
   @override
